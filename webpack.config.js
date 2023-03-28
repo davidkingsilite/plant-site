@@ -25,7 +25,7 @@ module.exports = {
      module: {
         rules: [
             {
-              test: /\.scss$/,
+              test: /\.css$/,
               use: [
                 'style-loader',
                 'css-loader',
@@ -51,7 +51,7 @@ module.exports = {
      },
      plugins: [
         new HtmlWebpackPlugin({
-            title: 'Rad plants',
+            title: 'Travel Experience',
             filename: 'index.html',
             template: 'src/template.html',
         }),

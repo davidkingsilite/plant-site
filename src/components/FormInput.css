@@ -1,0 +1,51 @@
+.forminput{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    text-align: left;
+    width: 450px;
+}
+
+input{
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.lab-ctn{
+  text-align: start;
+  font-size: 12px;
+  color: gray;
+}
+
+.invalid-icn{
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+    display: none;
+}
+
+.success-icn{
+    font-size: 12px;
+    padding: 3px;
+    color: green;
+    display: none;
+}
+
+input:invalid[focused="true"]{
+    border: 1px solid red;
+}
+
+input:valid[focused="true"]{
+    border: 1px solid green;
+}
+
+input:invalid[focused="true"] ~ .invalid-icn{
+    display:block;
+}
+
+input:valid[focused="true"] ~ .success-icn{
+    display:flex;
+    justify-content: flex-end;
+}

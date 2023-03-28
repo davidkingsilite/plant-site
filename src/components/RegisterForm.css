@@ -1,0 +1,35 @@
+.reg-auth-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 120vh;
+  background-image:linear-gradient(79deg, #fcfced, #fcedfc 48%, #ebf6ff);
+
+}
+
+
+form{
+  background-color: white;
+  padding: 0px 60px;
+  border-radius: 10px;
+}
+
+h1{
+  text-align: center;
+  padding-top: 20px;
+}
+
+.reg-btn{
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  background-color: black;
+  color:white;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 15px 0 30px 0;
+}
+
