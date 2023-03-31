@@ -14,6 +14,7 @@ const FormInput = (props) => {
         <div className="forminput">
            <label className="lab-ctn"> {label} </label>
             <input 
+                autoComplete="on"
                 {...inputProps} 
                 onChange={onChange} 
                 onBlur={handleFocus}

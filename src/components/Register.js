@@ -71,6 +71,7 @@ const Register = (props) => {
     e.preventDefault();
     setFormErrors(validate(values));
     setIsSubmit(true);
+    setValues(" ");
   };
 
   useEffect(() => {

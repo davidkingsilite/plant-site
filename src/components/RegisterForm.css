@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 120vh;
+  width: 100wh;
   background-image:linear-gradient(79deg, #fcfced, #fcedfc 48%, #ebf6ff);
 
 }
@@ -33,3 +34,7 @@ h1{
   margin: 15px 0 30px 0;
 }
 
+button{
+  margin-bottom: 10px;
+  
+}
