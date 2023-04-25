@@ -16,6 +16,11 @@ form{
   border-radius: 10px;
   margin-top: 50px;
 }
+ .reg-ptag{
+  padding-top: 30px;
+  color:red;
+  font-style: italic;
+}
 
 h1{
   text-align: center;

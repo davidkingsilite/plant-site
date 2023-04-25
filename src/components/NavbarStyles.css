@@ -28,6 +28,11 @@
   list-style: none;
   align-items: center;
 }
+.login-link{
+  text-decoration: none;
+  color: #151516;
+  font-weight: 700;
+}
 
 .menu-icons{
   display: none;
@@ -127,7 +132,7 @@ button:hover{
   transition: none;
 }
 
-.sgn-button{
+.login-link{
   display: none;
 }
  

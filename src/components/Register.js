@@ -72,12 +72,13 @@ const Register = (props) => {
     e.preventDefault();
     try {
         const response = await axios.post(REGISTER_URL,
-          JSON.stringify({ user: values.username, pwd: values.password, email: values.email}),
+          JSON.stringify({ user: values.username, email: values.email, pwd: values.password }),
           {
             headers: { 'Content-Type': 'application/json' },
             withCredentials: true
           }
           );
+          console.log(response);
           console.log(response?.data);
           console.log(response?.accessToken);
           console.log(JSON.stringify(response));
@@ -86,12 +87,17 @@ const Register = (props) => {
            setValues('');
     } catch (err){
         if(!err?.response){
-            setErrMsg(' No server Response');
-        } else if(err.response.username?.status === 409){
-            setErrMsg(' Username taken');
-        } else if(err.response.email?.status === 409){
-            setErrMsg(' Email already Existed. Sign In.');
-        } else { setErrMsg('Registration Failed') }
+            setErrMsg('No server Response. ');
+        } else if(err.response?.status === 409){
+            setErrMsg('Username already taken. ');
+                  
+        } else if(err.response?.status === 406){
+            setErrMsg('Email already existed. Please sign-in.');
+           
+        } else { 
+          setErrMsg('Registration Failed');
+
+        }
         return;
     }
    
@@ -109,9 +115,9 @@ const Register = (props) => {
         <div>Signed in successfully</div>
 
       ) : (
-        <section>
-          <p>{errMsg}</p>
+        <section> 
          <form onSubmit={handleSubmit} >  
+          <p className="reg-ptag">{errMsg}</p>
           <h1>Join Travel Experience</h1>
         { inputs.map((input) =>(
           <FormInput
@@ -138,5 +144,6 @@ const Register = (props) => {
 };
 
 export default Register;
+
 
 

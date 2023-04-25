@@ -3,13 +3,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
+  min-height: 100vh;
   background-image: linear-gradient(79deg, #fcfced, #fcedfc 48%, #ebf6ff);
 }
 .login-form {
   display: flex;
   flex-direction: column;
   text-align: start;
+  justify-content: center;
+  min-height: 60vh;
 }
 
 input {
@@ -17,4 +19,16 @@ input {
   text-align: left;
 }
 
-
+.reg-link{
+  text-decoration:underline;
+  padding: 10px;
+  color: #151516;
+  font-weight: 500;
+}
+.p-login{
+  padding: 10px;
+}
+.h2-login{
+  text-align: center;
+  padding-bottom: 40px;
+}

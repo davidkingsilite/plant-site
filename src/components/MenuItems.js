@@ -24,8 +24,8 @@
     icon : "fa-solid fa-address-book"
    },
    {
-     title : "Sign Up",
-    url : "/signup",
+     title : "Log in",
+    url : "/login",
     cName : "nav-links-mobile",
    }
  ]
