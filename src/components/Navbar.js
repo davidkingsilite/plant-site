@@ -7,7 +7,7 @@ import "./NavbarStyles.css";
 class Navbar extends Component {
 
   state= {clicked: false};
-  handleClick= () => {
+  handleClick=() => {
     this.setState({clicked: !this.state.clicked})
   }
   render() {

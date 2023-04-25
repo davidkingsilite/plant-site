@@ -1,8 +1,10 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./RegisterForm.css";
 import FormInput from "./FormInput";
+import axios from "../api/axios";
 
 
+const REGISTER_URL = '/register';
 
 const Register = (props) => {
   const [values, setValues] = useState({
@@ -12,7 +14,8 @@ const Register = (props) => {
     password: "",
     confirmPassword: "",
   });
-  const [formErrors, setFormErrors] = useState({});
+
+  const [errMsg, setErrMsg] = useState('');
   const [isSubmit, setIsSubmit] = useState(false);
  
     const inputs = [
@@ -21,10 +24,10 @@ const Register = (props) => {
         name:"username",
         type: "text",
         placeholder:"Username",
-        errorMessage:"(only 3-16 characters, no special characters!)",
+        errorMessage:"(only 3-16 characters, underscore and no special characters!)",
         label: "Username",
-        pattern: "^[A-Za-z0-9]{3,16}$",
-        required: true,
+        pattern: "^[A-Za-z][A-Za-z0-9-_]{3,16}$",
+        required: true
       },
         {
         id:2,
@@ -34,7 +37,7 @@ const Register = (props) => {
         errorMessage:"Please enter valid email address!",
         label: "Email",
         pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$",
-        required: true,
+        required: true
       },
         {
         id:3,
@@ -50,9 +53,8 @@ const Register = (props) => {
         placeholder:"Password",
         errorMessage:"Should be 8-20 characters and include at least 1 letter, 1 number and 1 special character except (*^$)",
         label: "Password",
-        pattern: /*"^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,20}$",*/'^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#%&])[a-zA-Z0-9!@#%&]{8,20}$',
-        required: true,
-        autoComplete: "off",
+        pattern: '^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#%&])[a-zA-Z0-9!@#%&]{8,20}$',
+        required: true 
       },
         {
         id:5,
@@ -62,49 +64,38 @@ const Register = (props) => {
         errorMessage:"Passwords don't match!",
         label: "Confirm Password", 
         pattern: ((values.confirmPassword === values.password) ? values.password :""),
-        required: true,
-        autoComplete: "off",
+        required: true
       }
     ]
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormErrors(validate(values));
-    setIsSubmit(true);
-    setValues(" ");
-  };
-
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(values);
+    try {
+        const response = await axios.post(REGISTER_URL,
+          JSON.stringify({ user: values.username, pwd: values.password, email: values.email}),
+          {
+            headers: { 'Content-Type': 'application/json' },
+            withCredentials: true
+          }
+          );
+          console.log(response?.data);
+          console.log(response?.accessToken);
+          console.log(JSON.stringify(response));
+          setIsSubmit(true);
+      //clear the input fields 
+           setValues('');
+    } catch (err){
+        if(!err?.response){
+            setErrMsg(' No server Response');
+        } else if(err.response.username?.status === 409){
+            setErrMsg(' Username taken');
+        } else if(err.response.email?.status === 409){
+            setErrMsg(' Email already Existed. Sign In.');
+        } else { setErrMsg('Registration Failed') }
+        return;
     }
-  }, [formErrors]);
-
-  const validate =()=> {
-      const errors = {};
-      const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/i;
-
-      const regexPassword = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#%&])[a-zA-Z0-9!@#%&]{8,20}$/i;
-      if (!values.username){
-          errors.username = "Username is required";
-      }
-      if (!values.email){
-          errors.email = "Email is required";
-      }else if(!regex.test(values.email)){
-          errors.email = "this is not a valid email format";
-      }
-      if (!values.password){
-          errors.password = "Password is required"
-      }else if(!regexPassword.test(values.password)){
-          errors.password = "Password not in the valid format";
-      }
-      if (values.confirmPassword !== values.password){
-        errors.confirmPassword = "password dont match!";
-      }
-      return errors;
-  };
-
+   
+  }
 
   const onChange = (e) => {
     setValues({...values,[e.target.name]: e.target.value});
@@ -113,30 +104,35 @@ const Register = (props) => {
 
   return (
     <div className="reg-auth-form-container">
-       {Object.keys(formErrors).length === 0 && isSubmit ? (
+      <>
+       { isSubmit ? (
         <div>Signed in successfully</div>
+
       ) : (
-        <> </>
-      )}
-      <form onSubmit={handleSubmit} >
-        <h1>Join Travel Experience</h1>
+        <section>
+          <p>{errMsg}</p>
+         <form onSubmit={handleSubmit} >  
+          <h1>Join Travel Experience</h1>
         { inputs.map((input) =>(
           <FormInput
              key={input.id} 
              {...input} 
              values={input.name} 
              onChange={onChange} 
-             {...formErrors}
+             
           />
         ))}
-        <p>{formErrors.confirmPassword}</p>
-        <button className="reg-btn"> Join </button>
 
+        <button className="reg-btn"> Join </button>
         <button onClick={() => props.onFormSwitch("login")}>
         {" "}
         Already have an account? Login
       </button>
       </form>
+      </section>
+      )}
+     </>
+      
     </div>
   );
 };
