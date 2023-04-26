@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./RegisterForm.css";
 import FormInput from "./FormInput";
 import axios from "../api/axios";
@@ -130,10 +131,12 @@ const Register = (props) => {
         ))}
 
         <button className="reg-btn"> Join </button>
-        <button onClick={() => props.onFormSwitch("login")}>
-        {" "}
-        Already have an account? Login
-      </button>
+        <p className="p-reg">
+            Already have an account?
+            <Link className="log-link" to="/login">
+                Log in
+            </Link>
+        </p>
       </form>
       </section>
       )}

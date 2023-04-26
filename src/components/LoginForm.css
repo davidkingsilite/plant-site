@@ -15,18 +15,31 @@
 }
 
 input {
-  padding: 0.5rem 5rem 0.5rem 0rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   text-align: left;
+  
 }
 
 .reg-link{
   text-decoration:underline;
-  padding: 10px;
+  padding: 5px;
   color: #151516;
   font-weight: 500;
 }
 .p-login{
   padding: 10px;
+}
+
+.p-errlog{
+  display: flex;
+  margin-bottom: 10px;
+  color: red;
+  justify-content: center;
+  justify-items: center;
+  background-color: #fcedfc;
+}
+.r-p{
+  padding: 0;
 }
 .h2-login{
   text-align: center;
