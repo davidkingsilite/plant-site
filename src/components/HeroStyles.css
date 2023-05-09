@@ -2,16 +2,19 @@
   width: 100%;
   height: 100vh;
   position: relative;
+  text-align: center;
 }
 .hero-mid{
   width: 100%;
   height: 80vh;
   position: relative;
+  text-align: center;
 }
 .hero-service{
   width: 100%;
   height: 80vh;
   position: relative;
+  text-align: center;
 }
 
 .hero-mid .hide{

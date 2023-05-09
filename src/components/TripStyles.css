@@ -1,6 +1,7 @@
 .trip {
   margin: 4rem 6rem;
   color: #222;
+  text-align: center;
 }
 .trip h1 {
   font-size: 3rem;

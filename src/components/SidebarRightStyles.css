@@ -1,0 +1,24 @@
+.right{
+    margin-top: 1.4rem;
+}
+
+.top-right{
+    display: flex;
+    justify-content:end;
+    gap: 2rem;
+}
+
+.top-right button{
+    display: none;
+}
+
+.top-right .theme-toggler{
+    display: flex;
+    background: var(--color-light);
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 3.5rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+}

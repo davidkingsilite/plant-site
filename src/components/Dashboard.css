@@ -1,0 +1,7 @@
+.dash-wrap{
+    display: grid;
+    grid-template-columns: 12rem auto 16rem;
+    gap: 1.8rem;
+    width: 96%;
+    margin: 0 auto;
+}

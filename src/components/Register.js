@@ -119,7 +119,7 @@ const Register = (props) => {
         <section> 
          <form onSubmit={handleSubmit} >  
           <p className="reg-ptag">{errMsg}</p>
-          <h1>Join Travel Experience</h1>
+          <h1 className="reg-h1">Join Travel Experience</h1>
         { inputs.map((input) =>(
           <FormInput
              key={input.id} 

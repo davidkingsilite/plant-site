@@ -6,6 +6,7 @@ import Contact from "./routes/Contact";
 import About from "./routes/About";
 import RegisterRoute from "./routes/RegisterRoute";
 import LoginRoute from "./routes/LoginRoute";
+import Dashboard from "./routes/Dashboard";
 import SignUp from "./routes/SignUp";
 import "./styles.css";
 
@@ -20,7 +21,8 @@ import "./styles.css";
       <Route path ="/contact" element={<Contact /> }/>
       <Route path ="/about" element={<About /> }/>
       <Route path ="/register" element={<RegisterRoute /> }/>
-      <Route path ="/login" element={<LoginRoute /> }/>
+      <Route path ="/login" element={<LoginRoute /> }/>      
+      <Route path ="/dashboard" element={<Dashboard /> }/>      
       <Route path="/signup" element={<SignUp />} />
       </Routes>
 
