@@ -14,7 +14,7 @@ const SidebarRight = () => {
                        <span className="material-icons-sharp">menu</span> 
                 </button>
                 <div className='theme-toggler'>
-                    <span className="material-icons-sharp">light_mode</span>
+                    <span className="material-icons-sharp active">light_mode</span>
                     <span className="material-icons-sharp">dark_mode</span>
                 </div>
                 <div className='profile'>
@@ -58,6 +58,55 @@ const SidebarRight = () => {
                             <p><b>Mike Tyson</b> received his order of Night Lion tech drones</p>
                             <small className='text-muted'> 2 Minutes Ago</small>
                         </div>
+                    </div>
+                </div>
+            </div>
+                {/* End of recent updates */}
+            <div className='sales-analytics'>
+                <h2> Sales Analytics</h2>
+                <div className='item online'>
+                    <div className='icon'>
+                         <span className="material-icons-sharp">shopping_cart</span>
+                    </div>
+                    <div className='right-sale'>
+                        <div className='info'>
+                            <h3>ONLINE ORDERS</h3>
+                            <small className='text-muted'> Last 24 hours </small>
+                        </div>
+                        <h5 className='success'> +39%</h5>
+                        <h3>3849</h3>
+                    </div>
+                </div>
+                  <div className='item offline'>
+                    <div className='icon'>
+                         <span className="material-icons-sharp">shopping_bag</span>
+                    </div>
+                    <div className='right-sale'>
+                        <div className='info'>
+                            <h3>OFFLINE ORDERS</h3>
+                            <small className='text-muted'> Last 24 hours </small>
+                        </div>
+                        <h5 className='danger'> -17%</h5>
+                        <h3>1100</h3>
+                    </div>
+                </div>
+                  <div className='item customers'>
+                    <div className='icon'>
+                         <span className="material-icons-sharp">person</span>
+                    </div>
+                    <div className='right-sale'> 
+                        <div className='info'>
+                            <h3>NEW CUSTOMERS</h3>
+                            <small className='text-muted'> Last 24 hours </small>
+                        </div>
+                        <h5 className='success'> +25%</h5>
+                        <h3>849</h3>
+                    </div>
+                </div>
+                <div className='item add-product'>
+                    <div>
+                     <span className="material-icons-sharp">add</span>
+                     <h3> Add product</h3>
                     </div>
                 </div>
             </div>

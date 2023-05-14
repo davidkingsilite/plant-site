@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../assets/images/logo.png';
 import "./SidebarStyles.css";
 
+
 const Sidebar = () => {
   return (
     <div className='container'>
@@ -17,7 +18,7 @@ const Sidebar = () => {
         </div>
 
         <div className='sidebar'>
-              < a href="#" >
+              < a href="#">
                <span className="material-icons-sharp"> grid_view </span>
                <h3 className='h-3'> Dashboard</h3>
               </a>

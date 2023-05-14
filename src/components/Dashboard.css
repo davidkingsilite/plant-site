@@ -1,7 +1,22 @@
 .dash-wrap{
     display: grid;
-    grid-template-columns: 12rem auto 16rem;
-    gap: 1.8rem;
-    width: 96%;
+    grid-template-columns: 13rem auto 21rem;
+    gap: 1rem;
+    width: 98%;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .dash-wrap{
+        width: 94%;
+        grid-template-columns: 6.5rem 39rem 21rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dash-wrap{
+        width: 100%;
+        grid-template-columns: 6.5rem 23rem 18rem;
+    }
+
 }

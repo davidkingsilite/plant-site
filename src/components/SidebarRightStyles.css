@@ -22,3 +22,134 @@
     cursor: pointer;
     border-radius: var(--border-radius-1);
 }
+
+.top-right .theme-toggler span{
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-right .theme-toggler span.active{
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-1);
+}
+
+.top-right .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+/* Recent Updates */
+
+.right .recent-updates{
+    margin-top: 1rem;
+}
+
+.right .recent-updates h2{
+    margin-bottom: 0.5rem;
+}
+
+.right .recent-updates .updates{
+    background: var(--color-white);
+    padding: 1rem;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.right .recent-updates .updates:hover{
+    box-shadow: none;
+}
+
+.right .recent-updates .updates .update{
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1rem;
+    margin-bottom: 0rem;
+}
+
+/* sales analytics */
+.sales-analytics{
+    margin-top: 2rem;
+}
+
+.sales-analytics h2{
+    margin-bottom: 0.8rem;
+}
+
+.sales-analytics .item{
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 5px;
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+    width: 336px;
+    height: 70px;
+}
+
+.sales-analytics .item:hover{
+    box-shadow: none;
+}
+
+.sales-analytics h3 {
+    font-size: 13px;
+}
+
+.sales-analytics .item .right-sale{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin: 0;
+    width: 80%;
+}
+
+.sales-analytics .item .icon{
+    padding: 0.6rem;
+    color: var(--color-white);
+    border-radius: 50%;
+    background: var(--color-primary);
+    display:flex;
+}
+
+.sales-analytics .item.offline .icon{
+ background: var(--color-danger);
+}
+
+.sales-analytics .item.customers .icon{
+ background: var(--color-success);
+}
+
+.sales-analytics .item.add-product{
+    display: flex;
+    color: var(--color-primary);
+    border: 2px dashed var(--color-primary);
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.sales-analytics .item.add-product div{
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.sales-analytics .item.add-product h3{
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+    .right{
+        width:94%;
+        margin: 0 auto 4rem;
+    }
+}

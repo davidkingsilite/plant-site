@@ -1,5 +1,7 @@
 .main-wrap{
     margin-top: 1.4rem;
+    width: 680px;
+    
 }
 .date{
     display: inline-block;
@@ -26,8 +28,8 @@
     border-radius: var(--card-border-radius);
     margin-top: 2rem;
     box-shadow: var(--box-shadow);
-    width: 230px;
-    height: 190px;
+    width: 210px;
+    height: 170px;
     transition: all 300ms ease;
 }
 
@@ -61,7 +63,7 @@
 }
 .insight h3{
     margin: 0.6rem 0 0 0.6rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 .insight > div .progress{
@@ -116,7 +118,7 @@
 }
 
 .recent-orders{
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 .recent-orders h2{
     margin-bottom: 0.8rem;
@@ -153,3 +155,45 @@
     color: var(--color-primary);
 }
 
+@media screen and (max-width: 1200px) {
+    .insight{
+        grid-template-columns: 0.9fr;
+        gap:0;
+    }
+    .insight > div{
+        width: auto;
+        height: auto;
+    }
+    .recent-orders {
+        width: 75%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 2rem 0 0 0.8rem;
+    }
+    .recent-orders table {
+        width: 83vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-wrap{
+        margin-top: 1rem;
+        padding: 0.1rem;
+    }
+    .insight{
+        grid-template-columns: 0.5fr;
+        gap: 0;
+    }
+    .recent-orders {
+        position: relative;
+        margin: 5rem 0 0 0; 
+        width: 90%;
+    }
+    .recent-orders table {
+        width: 80%;
+        margin: 0;
+        padding: 10px;
+     }
+
+}
