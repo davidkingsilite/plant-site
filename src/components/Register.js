@@ -113,7 +113,8 @@ const Register = (props) => {
     <div className="reg-auth-form-container">
       <>
        { isSubmit ? (
-        <div>Signed in successfully</div>
+        <div><p>Registration successful. <Link to='/login'>Log in with your details to sign-in.</Link></p>
+        </div>
 
       ) : (
         <section> 
@@ -126,7 +127,6 @@ const Register = (props) => {
              {...input} 
              values={input.name} 
              onChange={onChange} 
-             
           />
         ))}
 

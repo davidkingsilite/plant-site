@@ -178,20 +178,23 @@
 
 @media screen and (max-width: 768px) {
     .main-wrap{
-        margin-top: 1rem;
-        padding: 0.1rem;
+        margin-top: 5rem;
+        padding: 1.5rem;
     }
     .insight{
-        grid-template-columns: 0.5fr;
+        grid-template-columns: 0.8fr;
         gap: 0;
     }
     .recent-orders {
         position: relative;
         margin: 5rem 0 0 0; 
-        width: 90%;
+        width: 100%;
+    }
+    .recent-orders h2{
+        padding-left: 20px;
     }
     .recent-orders table {
-        width: 80%;
+        width: 100%;
         margin: 0;
         padding: 10px;
      }

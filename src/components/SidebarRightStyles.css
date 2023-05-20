@@ -152,4 +152,48 @@
         width:94%;
         margin: 0 auto 4rem;
     }
-}
+    .right .top-right{
+        position: fixed;
+        top:0;
+        left:0;
+        margin:0;
+        align-items: center;
+        padding: 0 0.8rem;
+        height: 4.6rem;
+        background: var(--color-white);
+        width: 100%;
+        z-index: 1;
+        box-shadow: 0 1rem 1rem var(--color-light);
+    }
+    .right .top-right .theme-toggler{
+        width: 4.4rem;
+        position: absolute;
+        left: 66%;
+    }
+    .right .profile .info{
+        display: none;
+    }
+    .right .top-right button{
+        display: inline-block;
+        background: transparent;
+        cursor: pointer;
+        color: var(--color-dark);
+        position:absolute;
+        left: 3rem;
+    }
+    .right .top-right button span{
+        font-size: 2rem;
+    }
+
+    .right .recent-updates h2{
+        padding-left: 20px;
+    }
+
+    .right .sales-analytics{
+        margin-left: 1rem;
+    }
+    .sales-analytics .item{
+        width: 500px;
+        height: 100px;
+    }
+}   

@@ -1,9 +1,36 @@
-import React from 'react'
+import React, {useContext} from 'react';
+import { useNavigate } from 'react-router-dom';
+import AuthContent from "../context/AuthProvider";
+
 import logo from '../assets/images/logo.png';
 import "./SidebarStyles.css";
 
 
+import axios from '../api/axios';
+const LOGOUT_URL = '/logout';
+
+
+
 const Sidebar = () => {
+
+
+const navigate = useNavigate();
+const { setAuth } = useContext(AuthContent);
+
+const handleLogout = async () => {
+        try {
+        const response = await axios.get(LOGOUT_URL);
+        console.log(JSON.stringify(response));
+        
+        setAuth({});
+        navigate('/login');
+        } catch (err){
+        if(!err?.response){
+          //setErrMsg('No Server Response');
+        }
+        }
+    }
+
   return (
     <div className='container'>
       <aside>
@@ -55,10 +82,10 @@ const Sidebar = () => {
                <span className="material-icons-sharp"> add </span>
                <h3 className='h-3'> Add Products</h3>
               </a>
-               < a href="#" >
+               <button onClick={handleLogout}>
                <span className="material-icons-sharp"> logout </span>
-               <h3 className='h-3'> Logout</h3>
-              </a>
+                Logout
+               </button>
         </div>
       </aside>
     </div>

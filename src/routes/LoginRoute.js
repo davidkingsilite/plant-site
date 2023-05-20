@@ -9,4 +9,4 @@ const LoginRoute = () => {
     )
 }
 
-export default LoginRoute
+export default LoginRoute;

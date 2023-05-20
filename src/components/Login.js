@@ -1,20 +1,21 @@
-import React, { useState, useEffect, useRef, useContext} from "react";
+import React, { useState, useEffect, useRef} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./LoginForm.css";
-import AuthContent from "../context/AuthProvider";
+import useAuth from "../hooks/useAuth";
 
 import axios from '../api/axios';
 const LOGIN_URL = '/auth';
 
 const Login = () => {
-  const { setAuth } = useContext(AuthContent);
+  const navigate = useNavigate();
+  const { setAuth } = useAuth();
+
   const userRef = useRef();
   const errRef = useRef();
 
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     userRef.current.focus();
@@ -42,7 +43,7 @@ const Login = () => {
           setAuth({ email, pwd, roles, accessToken });
           setEmail('');
           setPwd('');
-          setSuccess(true);
+           navigate('/dashboard');
     } catch (err){
         if(!err?.response){
           setErrMsg('No Server Response');
@@ -59,16 +60,6 @@ const Login = () => {
   
   return (
     <div className="login-auth-form-container">
-
-      { success ? (
-        <section>
-            <h1> You are logged in!</h1>
-            <br />
-            <p> 
-              <a href="#"> Go to Home</a>
-            </p>
-        </section>
-      ) : (
       <section>
       <form className="login-form" onSubmit={handleSubmit}>
 
@@ -86,6 +77,7 @@ const Login = () => {
           autoComplete="off"
           required
         />
+
         <label>Password </label>
         <input
           value={pwd}
@@ -96,6 +88,7 @@ const Login = () => {
           name="password"
           required
         />
+
         <button>Log In </button>
         <p className="p-login">
             Don't have an account?
@@ -105,8 +98,6 @@ const Login = () => {
         </p>
       </form>
       </section>
-      )
-        }
     </div>
   );
 };

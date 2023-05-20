@@ -16,7 +16,7 @@
 @media screen and (max-width: 768px) {
     .dash-wrap{
         width: 100%;
-        grid-template-columns: 6.5rem 23rem 18rem;
+        grid-template-columns: 1fr;
     }
 
 }
