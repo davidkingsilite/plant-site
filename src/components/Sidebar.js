@@ -13,7 +13,6 @@ const LOGOUT_URL = '/logout';
 
 const Sidebar = () => {
 
-
 const navigate = useNavigate();
 const { setAuth } = useContext(AuthContent);
 
@@ -82,10 +81,10 @@ const handleLogout = async () => {
                <span className="material-icons-sharp"> add </span>
                <h3 className='h-3'> Add Products</h3>
               </a>
-               <button onClick={handleLogout}>
+               <a onClick={handleLogout} className='logout'>
                <span className="material-icons-sharp"> logout </span>
                 Logout
-               </button>
+               </a>
         </div>
       </aside>
     </div>

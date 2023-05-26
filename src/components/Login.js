@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef} from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./LoginForm.css";
 import useAuth from "../hooks/useAuth";
 
@@ -7,8 +7,11 @@ import axios from '../api/axios';
 const LOGIN_URL = '/auth';
 
 const Login = () => {
+ const { setAuth } = useAuth();
+
   const navigate = useNavigate();
-  const { setAuth } = useAuth();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/dashboard';
 
   const userRef = useRef();
   const errRef = useRef();
@@ -43,7 +46,7 @@ const Login = () => {
           setAuth({ email, pwd, roles, accessToken });
           setEmail('');
           setPwd('');
-           navigate('/dashboard');
+          navigate(from, {replace: true});
     } catch (err){
         if(!err?.response){
           setErrMsg('No Server Response');

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './SidebarRightStyles.css';
 import profilepic1 from '../assets/images/profile-1.jpg';
 import profilepic2 from '../assets/images/profile-2.jpg';
@@ -20,7 +21,7 @@ const SidebarRight = () => {
                 <div className='profile'>
                     <div className='info'>
                         <p>Hey, <b>Daniel</b></p>
-                        <small className='text-muted'>Admin</small>
+                      <Link to="/dashboard/admin"><small className='text-muted'>Admin</small></Link>  
                     </div>
                     <div className='profile-photo'>
                         <img  src={profilepic1} />

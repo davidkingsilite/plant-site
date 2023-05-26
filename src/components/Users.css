@@ -1,0 +1,13 @@
+article{
+    margin: auto 1rem;
+}
+
+ul.list-users{
+    list-style-type: circle;
+    margin-left: 5rem;
+}
+
+ul li{
+    list-style-type: decimal;
+
+}

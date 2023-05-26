@@ -1,7 +1,5 @@
 .main-wrap{
     margin-top: 1.4rem;
-    width: 680px;
-    
 }
 .date{
     display: inline-block;
@@ -155,9 +153,9 @@
     color: var(--color-primary);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
     .insight{
-        grid-template-columns: 0.9fr;
+        grid-template-columns: 0.95fr;
         gap:0;
     }
     .insight > div{

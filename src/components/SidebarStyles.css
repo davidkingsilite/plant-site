@@ -108,8 +108,8 @@ b{
 }
 
 aside{
-    height: 100vh;
     display: flex;
+    height: auto;
     flex-direction: column;
     overflow-x: hidden;
 }
@@ -139,7 +139,7 @@ aside .close{
 aside .sidebar{
     display: flex;
     flex-direction: column;
-    height: 86vh;
+    height: auto;
     position: relative;
     top: 2rem;
 }
@@ -164,9 +164,9 @@ aside .sidebar a span{
 }
 
 aside .sidebar a:last-child{
-    position: absolute;
     bottom: 4rem;
     width: 86%;
+    margin-top: 5rem;
 }
 aside .sidebar a.active{
     background: var(--color-light);
@@ -204,11 +204,20 @@ aside .sidebar .message-count{
     border-radius: var(--border-radius-1);
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 900px){
+    aside{
+        position: fixed;
+        left: 0;
+        padding-left: 5px;
+        z-index: 3;
+        height: 100vh;
+    }
+    
     aside .logo h2{
         display: none;
     }
     aside .sidebar h3{
+        
         display: none;
     }
     aside .sidebar a{
@@ -217,9 +226,8 @@ aside .sidebar .message-count{
     }
     aside .sidebar a:last-child{
         position:relative;
-        margin-top: 5.8rem;
+        margin-top: 5.8rem;    
     }
-
    
 }
 
