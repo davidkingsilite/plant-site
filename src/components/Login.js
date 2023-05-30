@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef} from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./LoginForm.css";
 import useAuth from "../hooks/useAuth";
-import useInput from "../hooks/useInput";
+// import useInput from "../hooks/useInput";
 import useToggle from "../hooks/useToggle";
 
 import axios from '../api/axios';
@@ -18,7 +18,7 @@ const Login = () => {
   const userRef = useRef();
   const errRef = useRef();
 
-  const [email, resetUser, userAttributes] = useInput('User', '');
+  const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [check, toggleCheck] = useToggle('persist', false);
@@ -46,8 +46,8 @@ const Login = () => {
           // console.log(JSON.stringify(response));
           const accessToken = response?.data?.accessToken;
           setAuth({ email, accessToken });
-          //setEmail('');
-          resetUser();
+          setEmail('');
+          // resetUser();
           setPwd('');
           navigate(from, {replace: true});
     } catch (err){
@@ -79,7 +79,8 @@ const Login = () => {
           name="email"
           ref={userRef}
           autoComplete="off"
-          {...userAttributes}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
         
