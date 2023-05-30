@@ -12,6 +12,7 @@
   text-align: start;
   justify-content: center;
   min-height: 60vh;
+  padding-bottom: 0;
 }
 
 input {
@@ -27,12 +28,12 @@ input {
   font-weight: 500;
 }
 .p-login{
-  padding: 10px;
+  padding: 10px 10px 10px 0;
 }
 
 .p-errlog{
   display: flex;
-  margin-bottom: 10px;
+  margin: 10px 0;
   color: red;
   justify-content: center;
   justify-items: center;
@@ -43,5 +44,23 @@ input {
 }
 .h2-login{
   text-align: center;
-  padding-bottom: 40px;
+  padding: 10px 30px 30px 30px;
+}
+
+.persistCheck{
+  font-size: 0.75rem;
+  margin-top: 0px;
+  display:flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.persistCheck label{
+  margin:0;
+}
+
+[type="checkbox"]{
+  height: 20px;
+  width: 20px;
+  margin: 0 5px 2px 2px;
 }

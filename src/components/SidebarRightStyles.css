@@ -146,8 +146,19 @@
 .sales-analytics .item.add-product h3{
     font-weight: 500;
 }
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
+    .right .recent-updates .updates{
+        width: auto;
+    }
+    .right .sales-analytics{
+        width: 90%;
+    }
+    .sales-analytics .item{
+        width: 250px;
+        height: 70px;
+    }
+}
+@media screen and (max-width: 425px) {
     .right{
         width:94%;
         margin: 0 auto 4rem;
@@ -159,41 +170,75 @@
         margin:0;
         align-items: center;
         padding: 0 0.8rem;
-        height: 4.6rem;
+        height: 6.7rem;
         background: var(--color-white);
         width: 100%;
-        z-index: 1;
+        z-index: 10000;
         box-shadow: 0 1rem 1rem var(--color-light);
     }
     .right .top-right .theme-toggler{
         width: 4.4rem;
         position: absolute;
-        left: 66%;
+        left: 64%;
+        top: 1rem;
+        height: 1.6rem;
+        width: 3.2rem;
     }
     .right .profile .info{
-        display: none;
+        display: block;
+        font-size: 14px;
+        position: relative;
+        left: 4.5rem;
+        top: 3rem;
     }
+    .right .profile{
+        top:-1.5rem;
+        position: relative;
+    }
+
     .right .top-right button{
         display: inline-block;
         background: transparent;
         cursor: pointer;
         color: var(--color-dark);
         position:absolute;
-        left: 3rem;
+        left: 1rem;
+        top: 1rem;
     }
     .right .top-right button span{
         font-size: 2rem;
     }
-
+    .right .recent-updates .updates{
+        width: 100%;
+    }
     .right .recent-updates h2{
         padding-left: 20px;
     }
 
     .right .sales-analytics{
-        margin-left: 1rem;
+        margin-left: 0.7rem;
+        width: 90%;
     }
     .sales-analytics .item{
-        width: 500px;
-        height: 100px;
+        width: auto;
+        height: auto;
+    }
+    .right-sale .target{
+        display: flex;
+        padding-top: 15px;
+        justify-content: space-between;
+        justify-items: center;
+        gap: 2.5rem;
     }
 }   
+
+@media screen and (max-width: 320px) {
+     .right .profile .info{
+        left: 4.5rem;
+        top: 3rem;
+    }
+    
+    .right .top-right{
+        height: 7rem;
+    }
+}

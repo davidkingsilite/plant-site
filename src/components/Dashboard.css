@@ -1,19 +1,19 @@
 .dash-wrap{
     display: grid;
     grid-template-columns: 13rem auto 21rem;
-    gap: 1rem;
+    gap: 0.5rem;
     width: 98%;
     margin: 0 auto;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
     .dash-wrap{
-        width: 94%;
-        grid-template-columns: 6.5rem 23rem 22rem;
+        
+        grid-template-columns: 6.5rem 22rem 17rem;
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 425px) {
     .dash-wrap{
         width: 100%;
         grid-template-columns: 1fr;

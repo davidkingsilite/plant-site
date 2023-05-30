@@ -8,6 +8,7 @@ import profilepic4 from '../assets/images/profile-4.jpg';
 
 
 const SidebarRight = () => {
+    
     return (
         <div className='right'>
             <div className='top-right'>
@@ -21,7 +22,7 @@ const SidebarRight = () => {
                 <div className='profile'>
                     <div className='info'>
                         <p>Hey, <b>Daniel</b></p>
-                      <Link to="/dashboard/admin"><small className='text-muted'>Admin</small></Link>  
+                      <Link to="/admin"><small className='text-muted'>Admin</small></Link>  
                     </div>
                     <div className='profile-photo'>
                         <img  src={profilepic1} />
@@ -74,8 +75,10 @@ const SidebarRight = () => {
                             <h3>ONLINE ORDERS</h3>
                             <small className='text-muted'> Last 24 hours </small>
                         </div>
-                        <h5 className='success'> +39%</h5>
-                        <h3>3849</h3>
+                        <div className='target'>
+                            <h5 className='success'> +39%</h5>
+                            <h3>3849</h3>
+                        </div>
                     </div>
                 </div>
                   <div className='item offline'>
@@ -87,8 +90,10 @@ const SidebarRight = () => {
                             <h3>OFFLINE ORDERS</h3>
                             <small className='text-muted'> Last 24 hours </small>
                         </div>
-                        <h5 className='danger'> -17%</h5>
-                        <h3>1100</h3>
+                        <div className='target'>
+                            <h5 className='danger'> -17%</h5>
+                            <h3>1100</h3>
+                        </div>
                     </div>
                 </div>
                   <div className='item customers'>
@@ -100,8 +105,10 @@ const SidebarRight = () => {
                             <h3>NEW CUSTOMERS</h3>
                             <small className='text-muted'> Last 24 hours </small>
                         </div>
-                        <h5 className='success'> +25%</h5>
-                        <h3>849</h3>
+                        <div className='target'>
+                            <h5 className='success'> +25%</h5>
+                            <h3>849</h3>
+                        </div>
                     </div>
                 </div>
                 <div className='item add-product'>

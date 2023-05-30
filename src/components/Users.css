@@ -2,12 +2,7 @@ article{
     margin: auto 1rem;
 }
 
-ul.list-users{
-    list-style-type: circle;
-    margin-left: 5rem;
-}
-
-ul li{
+ul .list-users{
     list-style-type: decimal;
-
+    margin-left: 5rem;
 }

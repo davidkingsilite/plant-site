@@ -1,33 +1,18 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import AuthContent from "../context/AuthProvider";
-
+import useLogout from '../hooks/useLogout';
 import logo from '../assets/images/logo.png';
 import "./SidebarStyles.css";
-
-
-import axios from '../api/axios';
-const LOGOUT_URL = '/logout';
-
 
 
 const Sidebar = () => {
 
 const navigate = useNavigate();
-const { setAuth } = useContext(AuthContent);
+const logout = useLogout();
 
 const handleLogout = async () => {
-        try {
-        const response = await axios.get(LOGOUT_URL);
-        console.log(JSON.stringify(response));
-        
-        setAuth({});
+        await logout();
         navigate('/login');
-        } catch (err){
-        if(!err?.response){
-          //setErrMsg('No Server Response');
-        }
-        }
     }
 
   return (

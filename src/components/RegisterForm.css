@@ -39,6 +39,14 @@ form{
   text-align: center;
   padding-top: 20px;
 }
+.reg-suc{
+  text-align: center;
+  padding-top: 250px;
+}
+
+.link-login{
+  text-decoration: underline;
+}
 
 .reg-btn{
   width: 100%;

@@ -2,12 +2,14 @@ import React, { useState, useEffect, useRef} from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./LoginForm.css";
 import useAuth from "../hooks/useAuth";
+import useInput from "../hooks/useInput";
+import useToggle from "../hooks/useToggle";
 
 import axios from '../api/axios';
 const LOGIN_URL = '/auth';
 
 const Login = () => {
- const { setAuth } = useAuth();
+ const { setAuth} = useAuth();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -16,9 +18,10 @@ const Login = () => {
   const userRef = useRef();
   const errRef = useRef();
 
-  const [email, setEmail] = useState("");
+  const [email, resetUser, userAttributes] = useInput('User', '');
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const [check, toggleCheck] = useToggle('persist', false);
 
   useEffect(() => {
     userRef.current.focus();
@@ -39,12 +42,12 @@ const Login = () => {
                 withCredentials: true
              }
           );
-          console.log(JSON.stringify(response?.data));
-          console.log(JSON.stringify(response));
+          // console.log(JSON.stringify(response?.data));
+          // console.log(JSON.stringify(response));
           const accessToken = response?.data?.accessToken;
-          const roles = response?.data?.roles;
-          setAuth({ email, pwd, roles, accessToken });
-          setEmail('');
+          setAuth({ email, accessToken });
+          //setEmail('');
+          resetUser();
           setPwd('');
           navigate(from, {replace: true});
     } catch (err){
@@ -70,17 +73,16 @@ const Login = () => {
         <h2 className="h2-login"> Login </h2>
         <label>Email </label>
         <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
           type="email"
           placeholder= "example@email.com "
           id="email"
           name="email"
           ref={userRef}
           autoComplete="off"
+          {...userAttributes}
           required
         />
-
+        
         <label>Password </label>
         <input
           value={pwd}
@@ -93,6 +95,15 @@ const Login = () => {
         />
 
         <button>Log In </button>
+        <div className="persistCheck">
+          <input 
+              type="checkbox"
+              id="persist"
+              onChange={toggleCheck}
+              checked={check}
+          />
+          <label htmlFor="persist">Trust this device</label>
+        </div>
         <p className="p-login">
             Don't have an account?
             <Link className="reg-link" to="/register">

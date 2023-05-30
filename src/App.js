@@ -15,7 +15,7 @@ import Lounge from "./routes/Lounge";
 import "./styles.css";
 import RequireAuth from "./components/RequireAuth";
 import Layout from "./components/Layout";
-
+import PersistLogin from "./components/PersistLogin";
 
 const ROLES = {
   'User': 2001,
@@ -39,22 +39,23 @@ const ROLES = {
       <Route path ="/unauthorized" element={<Unauthorized /> }/> 
 
           {/* protected Routes */}
-      <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>  
-        <Route path ="/dashboard" element={<Dashboard /> }/>
-      </Route>  
+      <Route element={<PersistLogin />}>  
+        <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>  
+          <Route path ="/dashboard" element={<Dashboard /> }/>
+        </Route>  
 
-      <Route element={<RequireAuth allowedRoles={[ROLES.Editor]} />}>
-        <Route path="/editor" element={<Editor />} />
-      </Route>
+        <Route element={<RequireAuth allowedRoles={[ROLES.Editor]} />}>
+          <Route path="/editor" element={<Editor />} />
+        </Route>
 
-      <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
-        <Route path="/dashboard/admin" element={<Admin />} />
-      </Route>
+        <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
+          <Route path="/admin" element={<Admin />} />
+        </Route>
 
-      <Route element={<RequireAuth allowedRoles={[ROLES.Editor, ROLES.Admin]} />}>
-        <Route path="/lounge" element={<Lounge />} />
-      </Route>
-
+        <Route element={<RequireAuth allowedRoles={[ROLES.Editor, ROLES.Admin]} />}>
+          <Route path="/lounge" element={<Lounge />} />
+        </Route>
+      </Route>   
           {/* catch all  */}
       <Route path="*" element={<Missing /> }/>
       </Route>  

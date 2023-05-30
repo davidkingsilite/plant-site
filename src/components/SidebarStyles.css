@@ -204,7 +204,7 @@ aside .sidebar .message-count{
     border-radius: var(--border-radius-1);
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 768px){
     aside{
         position: fixed;
         left: 0;
@@ -217,7 +217,7 @@ aside .sidebar .message-count{
         display: none;
     }
     aside .sidebar h3{
-        
+
         display: none;
     }
     aside .sidebar a{
@@ -231,7 +231,7 @@ aside .sidebar .message-count{
    
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 425px) {
     aside{
         position: fixed;
         left: 0;

@@ -7,7 +7,7 @@ import axios from "../api/axios";
 
 const REGISTER_URL = '/register';
 
-const Register = (props) => {
+const Register = () => {
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -79,10 +79,10 @@ const Register = (props) => {
             withCredentials: true
           }
           );
-          console.log(response);
-          console.log(response?.data);
-          console.log(response?.accessToken);
-          console.log(JSON.stringify(response));
+          // console.log(response);
+          // console.log(response?.data);
+          // console.log(response?.accessToken);
+          // console.log(JSON.stringify(response));
           setIsSubmit(true);
       //clear the input fields 
            setValues('');
@@ -113,7 +113,7 @@ const Register = (props) => {
     <div className="reg-auth-form-container">
       <>
        { isSubmit ? (
-        <div><p>Registration successful. <Link to='/login'>Log in with your details to sign-in.</Link></p>
+        <div className="reg-suc"><p>Registration successful. <Link to='/login' className="link-login">Log in with your details to sign-in.</Link></p>
         </div>
 
       ) : (
