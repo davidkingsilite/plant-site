@@ -23,7 +23,7 @@ const Footer = () => {
                 <i className="fa-brands fa-twitter-square"> </i>
               </a>
             </div>
-        </div>
+          </div>
          <div  className="bottom"> 
               <div> 
                 <h4> Project </h4>

@@ -32,10 +32,10 @@ useEffect(() => {
     return () => isMounted = false;
 },[])
 
-useEffect(() => {
-    console.log(`IsLoading: ${isLoading}`)
-    // console.log(`aT: ${JSON.stringify(auth?.accessToken)}`)
-},[isLoading])
+// useEffect(() => {
+//     // console.log(`IsLoading: ${isLoading}`)
+//     // console.log(`aT: ${JSON.stringify(auth?.accessToken)}`)
+// },[isLoading])
 
 return (
     <>
