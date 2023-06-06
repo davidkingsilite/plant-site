@@ -70,8 +70,8 @@ input {
     height: 80vh;
 }
 .login-form {
-    height: 60vh;
-    width: 65vw;
+    height: 80vh;
+    width: 80vw;
     gap:5px;
 }
 }

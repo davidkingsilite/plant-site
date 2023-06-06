@@ -71,7 +71,7 @@ button{
 @media screen and (max-width: 360px) {
   .reg-auth-form-container{
      height: 90vh;
-     width: 70vw;
+     width: 90vw;
      margin:auto;
   }
   
