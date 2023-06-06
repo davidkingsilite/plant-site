@@ -64,3 +64,14 @@ input {
   width: 20px;
   margin: 0 5px 2px 2px;
 }
+
+@media screen and (max-width: 360px) {
+.login-auth-form-container {
+    height: 80vh;
+}
+.login-form {
+    height: 60vh;
+    width: 65vw;
+    gap:5px;
+}
+}

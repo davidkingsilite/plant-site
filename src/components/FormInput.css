@@ -49,3 +49,9 @@ input:valid[focused="true"] ~ .success-icn{
     display:flex;
     justify-content: flex-end;
 }
+
+@media screen and (max-width: 360px) {
+    .forminput{
+        width: 200px;
+    }
+}

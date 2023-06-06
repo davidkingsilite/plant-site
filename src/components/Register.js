@@ -24,7 +24,6 @@ const Register = () => {
         id:1,
         name:"username",
         type: "text",
-        placeholder:"Username",
         errorMessage:"(only 3-16 characters, underscore and no special characters!)",
         label: "Username",
         pattern: "^[A-Za-z][A-Za-z0-9-_]{3,16}$",
@@ -34,7 +33,6 @@ const Register = () => {
         id:2,
         name:"email",
         type: "email",
-        placeholder:"Email",
         errorMessage:"Please enter valid email address!",
         label: "Email",
         pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$",
@@ -44,14 +42,12 @@ const Register = () => {
         id:3,
         name:"birthday",
         type: "date",
-        placeholder:"Birthday",
         label: "Birthday"
       },
         {
         id:4,
         name: "password",
         type: "password",
-        placeholder:"Password",
         errorMessage:"Should be 8-20 characters and include at least 1 letter, 1 number and 1 special character except (*^$)",
         label: "Password",
         pattern: '^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#%&])[a-zA-Z0-9!@#%&]{8,20}$',
@@ -61,7 +57,6 @@ const Register = () => {
         id:5,
         name:"confirmPassword",
         type: "password",
-        placeholder:"Confirm Password",
         errorMessage:"Passwords don't match!",
         label: "Confirm Password", 
         pattern: ((values.confirmPassword === values.password) ? values.password :""),
@@ -147,6 +142,7 @@ const Register = () => {
 };
 
 export default Register;
+
 
 
 

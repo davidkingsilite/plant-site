@@ -89,7 +89,6 @@ const Login = () => {
           value={pwd}
           onChange={(e) => setPwd(e.target.value)}
           type="password"
-          placeholder= "password "
           id="password"
           name="password"
           required

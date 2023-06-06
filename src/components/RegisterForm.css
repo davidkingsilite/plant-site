@@ -38,6 +38,8 @@ form{
 .reg-h1{
   text-align: center;
   padding-top: 20px;
+  font-size: 24px;
+  padding-bottom: 15px;
 }
 .reg-suc{
   text-align: center;
@@ -64,4 +66,25 @@ form{
 button{
   margin-bottom: 10px;
   
+}
+
+@media screen and (max-width: 360px) {
+  .reg-auth-form-container{
+     height: 90vh;
+     width: 70vw;
+     margin:auto;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px 20px 15px;
+    
+  }
+  .reg-btn{
+      margin: 15px 0 15px 0;
+  }
+  .reg-h1{
+      font-size: 18px;
+  }
 }
